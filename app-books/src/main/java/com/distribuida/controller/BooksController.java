@@ -31,10 +31,12 @@ public class BooksController {
     }
 
     @PutMapping
-    public ResponseEntity<Books> updateBook(@PathVariable("id") Integer id, @RequestBody Books Book){
+    public ResponseEntity<Books> updateBook(@PathVariable("id") Integer id, @RequestBody Books book){
         Books result = BooksService.findBookById(id).get();
-        result.setFirstName(Book.getFirstName());
-        result.setLastName(Book.getLastName());
+        result.setAuthorId(book.getAuthorId());
+        result.setIsbn(book.getIsbn());
+        result.setPrice(book.getPrice());
+        result.setTitle(book.getTitle());
         return ResponseEntity.ok(BooksService.updateBook(result));
     }
 

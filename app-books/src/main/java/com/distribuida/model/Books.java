@@ -2,10 +2,11 @@ package com.distribuida.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "books")
 public class Books {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -19,7 +20,6 @@ public class Books {
     @Column(name="author_id")
     private Integer authorId;
 
-
 	public String getIsbn() {
 		return this.isbn;
 	}
@@ -28,7 +28,6 @@ public class Books {
 		this.isbn = isbn;
 	}
 
-
 	public String getTitle() {
 		return this.title;
 	}
@@ -36,7 +35,6 @@ public class Books {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 	public BigDecimal getPrice() {
 		return this.price;
@@ -54,7 +52,6 @@ public class Books {
 		this.authorId = authorId;
 	}
 
-
     public Integer getId() {
         return id;
     }
@@ -62,8 +59,5 @@ public class Books {
     public void setId(Integer id) {
         this.id = id;
     }
-
-
-
 
 }

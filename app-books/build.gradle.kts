@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.distribuida"
-version = "1.0-SNAPSHOT"
+version = "unspecified"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -14,6 +14,7 @@ java {
 repositories {
     mavenCentral()
 }
+
 extra["springCloudVersion"] = "2023.0.0"
 
 dependencies {
@@ -31,6 +32,7 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
+
 dependencyManagement {
     imports {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
