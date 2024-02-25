@@ -24,6 +24,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web-services")
     implementation("org.springframework.cloud:spring-cloud-starter-gateway-mvc")
 
+
     //Consul
     implementation("org.springframework.cloud:spring-cloud-starter-consul-config")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
