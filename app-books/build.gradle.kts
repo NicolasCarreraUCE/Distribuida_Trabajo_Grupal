@@ -7,6 +7,8 @@ plugins {
 group = "com.distribuida"
 version = "1.0-SNAPSHOT"
 
+extra["springCloudVersion"] = "2023.0.0"
+
 java {
     sourceCompatibility = JavaVersion.VERSION_17
 }
@@ -23,11 +25,20 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.cloud:spring-cloud-starter-consul-config")
+
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0")
 
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+    }
+}
 
 tasks.test {
     useJUnitPlatform()
