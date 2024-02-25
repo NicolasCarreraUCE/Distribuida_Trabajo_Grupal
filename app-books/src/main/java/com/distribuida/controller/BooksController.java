@@ -1,5 +1,6 @@
 package com.distribuida.controller;
 
+import com.distribuida.dto.BooksDto;
 import com.distribuida.model.Books;
 import com.distribuida.service.IBooksService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class BooksController {
     private IBooksService BooksService;
 
     @GetMapping
-    public ResponseEntity<List<Books>> findAllBooks() {
+    public ResponseEntity<List<BooksDto>> findAllBooks() {
         return ResponseEntity.ok(BooksService.findAllBooks());
     }
 
