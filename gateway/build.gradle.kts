@@ -22,12 +22,16 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-hateoas")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-web-services")
-    implementation("org.springframework.cloud:spring-cloud-starter-gateway-mvc")
+    //implementation("org.springframework.cloud:spring-cloud-starter-gateway-mvc")
+    implementation("org.springframework.cloud:spring-cloud-starter-gateway")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.cloud:spring-cloud-starter-consul-discovery")
 
 
     //Consul
     implementation("org.springframework.cloud:spring-cloud-starter-consul-config")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.cloud:spring-cloud-starter-loadbalancer")
 
 
     runtimeOnly("org.postgresql:postgresql")
